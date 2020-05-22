@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "af426116-de7e-4cd4-a82a-83e5d2e2c1a2",
+		"name": "books-manage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "GET all books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cd689fe5-9231-4ce3-b779-69c9e75a9200",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/books",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books"
+							]
+						},
+						"description": "This GET request obtains all the books\n@ykarqui"
+					},
+					"response": []
+				},
+				{
+					"name": "GET all books with author id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec409176-0fe2-42e7-98f6-b187918c149f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/books/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						},
+						"description": "Get books from specific author"
+					},
+					"response": []
+				},
+				{
+					"name": "POST book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8b222be-08a4-44f1-b286-b269f13f17a7",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"id\": \"8\",  \n\"name\": \"Testing \",  \n\"isbn\": \"123456789\",  \n\"author_id\": \"6\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/books",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books"
+							]
+						},
+						"description": "This POST request add a book with id: 8\n@ykarqui"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "05d43d90-7d04-46fe-8ce5-367edabedbdf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"id\": \"7\",\n    \"name\": \"You KNOW JS\",\n    \"author\": \"Kyle Simpson\",\n    \"isbn\": \"9781491904244\",\n    \"author_id\": \"5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/books/7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"7"
+							]
+						},
+						"description": "This PUT request modify the name of the book with id: 7\n@ykarqui"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8401f82c-27de-4500-96d8-510bafab3aa6",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/books/8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"8"
+							]
+						},
+						"description": "This DELETE request erase the book with id: 8\n@ykarqui"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "GET all authors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "07e3ffd9-4449-4e73-bd3b-594f9605bc76",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET one author by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aabb8487-0342-450c-a678-2dfd6278e01d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/authors/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST author",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2a857a50-28e6-44a8-b4d9-fe055f0c80fc",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"id\": \"9\",  \n\"name\": \"John\",  \n\"last_name\": \"Doe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT author",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8fdc2cec-956a-45f7-b79b-3c907df4d961",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"id\": \"5\",\n    \"name\": \"Linus\",\n    \"last_name\": \"Torvalds\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/authors/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE author",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8f9f6e6-3523-4810-b918-9b726b8b334f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/authors/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"authors",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
