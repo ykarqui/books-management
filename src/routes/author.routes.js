@@ -3,8 +3,8 @@ const router = Router();
 const _ = require('lodash');
 const bookService = require('./book.routes.js')
 
-const authors = require('../authors.json');
-const books = require('../books.json');
+const authors = require('../static-db/authors.json');
+const books = require('../static-db/books.json');
 
 // Get all authors
 router.get('/authors', (req, res) => {

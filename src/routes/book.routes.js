@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const _ = require('lodash');
 
-const books = require('../books.json');
+const books = require('../static-db/books.json');
 
 // Get all books
 router.get('/books', (req, res) => {
